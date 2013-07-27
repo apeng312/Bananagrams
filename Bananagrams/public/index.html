@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Bananagrams!</title>
+		<link rel="stylesheet" href="bananagrams.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+		<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+		<script src="bananagrams.js"></script>
+		<script src="socketio.js"></script>
+	</head>
+
+	<body>
+		<h1>Bananagrams!</h1>
+		<section id="intro-screen" class="active-section">
+			<ol>
+				<li>
+					<label for="name">Name</label>
+					<input type="text" name="name">
+					<p id="bad-name" class="error hidden">This name is already in use</p>
+				</li>
+				<li>
+					<label for="game-ID">Game ID</label>
+					<input type="text" name="game-ID">
+					<span id="join" class="button">
+						Join Game
+					</span>
+					<p id="bad-id" class="error hidden">Invalid game ID or game is full</p>
+				</li><li>
+					<span id="new" class="button">New Game</span>
+				</li>
+			</ol>
+			<article>
+				<p>
+					Bananagrams is a multiplayer word game in which players compete to arrange letters into words on a grid. The game is fast paced and lots of fun for families, friends, and players of any age.
+				</p>
+				<p>
+					The game is easy to learn and the rules can be found <a href="http://www.bananagrams.com/Our_Games/">here</a>
+				</p>
+			</article>
+		</section>
+		<section id="game">
+			<div id="exit" class="button">Exit</div>
+			<div id="top-bar">
+				<ol class="buttons">
+					<li id="split" class="inactive">Split!</li>
+					<li id="peel" class="hidden">Peel!</li>
+					<li id="dump" class="hidden">Dump!</li>
+					<li id="bananas" class="hidden">Bananas!</li>
+				</ol>
+
+				<div id="info">
+					<p>
+						Tiles remaining: <span id="tiles-remaining"></span>
+					</p><p>
+						Game ID: <span  id="game-id"></span>
+					</p>
+				</div>
+			</div>
+
+			<div id="board">
+				<div>
+					<div id="pregame">
+						<div id="postgame" class="hidden">
+							<h2><span></span> won!</h2>
+							<div><span class="button">Play Again</span></div>
+						</div>
+						<h2>Players</h2>
+						<ol>
+						</ol>
+					</div>
+				</div>
+			</div>
+
+			<div id="hand">
+			</div>
+		</section>
+	</body>
+</html>
